@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<h1>Daily Calorie Intake Calculator</h1>
+<ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="gender">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+    </ion-select>
+</ion-item>
+<ion-item>
+<ion-label>Height (cm)</ion-label>
+<ion-input type="number" [(ngModel)]="height"> </ion-input>
+</ion-item>
+<ion-item>
+<ion-label>Weight (kg)</ion-label>
+<ion-input type="number" [(ngModel)]="weight"> </ion-input>
+</ion-item>
+<ion-item>
+<ion-label>Age</ion-label>
+<ion-input type="number" [(ngModel)]="age"> </ion-input>
+</ion-item>
+<ion-item class="item-leave-height">
+    <ion-label>Lifestyle</ion-label>
+    <ion-select [(ngModel)]="lifestyle">
+        <ion-option value=1.2>Sedentary lifestyle (little or no exercise)</ion-option>
+        <ion-option value=1.4>Slightly active lifestyle (light exercise or sports 1-2 days/week)</ion-option>
+        <ion-option value=1.6>Moderately active lifestyle (moderate exercise or sports 2-3 days/week)</ion-option>
+        <ion-option value=1.75>Very active lifestyle (hard exercise or sports 4-5 days/week)</ion-option>
+        <ion-option value=2.0>Extra active lifestyle (very hard exercise, physical job or sports 6-7 days/week)</ion-option>
+        <ion-option value=2.3>Professional athlete</ion-option>
+    </ion-select>
+</ion-item>
+<button ion-button color="primary" (click)="calculateCalorieIntake()"> CALCULATE
+</button>
+<ion-item *ngIf="calorie">
+		<h2>Your Daily Calorie Intake is: {{calorie}} kcal/day</h2>
+</ion-item>
+</ion-content>
